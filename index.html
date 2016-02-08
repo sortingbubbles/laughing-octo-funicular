@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>This is my first WebVR demo</title>
+		<script src="https://aframe.io/releases/latest/aframe.min.js">
+		</script>
+	</head>
+	<body>
+		<a-scene>
+			<a-camera cursor-visible="true" position="0 0 0">
+			</a-camera>
+			<!--a-light position="0 2 0" color="blue">
+			</a-light-->
+
+			<!--a-curvedimage src="starryNight.jpg" radius='5' height='3.3'>
+			</a-curvedimage-->
+
+			<a-sphere id="target" radius='1' color="black">
+				<a-animation attribute="position" from="-7 4 -3" to="7 4 -20" dur="1500" repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+			<a-cube look-at="#target" position="-5 2 -2" radius='2' color="#EF205E">		
+				<a-mouseenter color="blue">
+
+				</a-mouseenter>
+				<a-mouseenter target="#cyl" scale="3 1">
+				
+				</a-mouseenter>	
+				<a-mouseleave target="#cyl" scale="1 1">
+				</a-mouseleave>
+				<a-mouseleave color="#EF205E">
+				</a-mouseleave>
+			</a-cube>
+			<a-cube width='3' depth='3' height='1' rotation=" 0 0 0" position="0 0 -2">
+			</a-cube>
+			<a-cylinder id="cyl" height='6' radius='1' position="5 3 -6">
+			</a-cylinder>
+			<a-plane width='8' height='8' color="green" rotation="90 0 0" position="0 0 -3"></a-plane>
+			<a-sky src="photosphere.jpg">
+			</a-sky>
+		</a-scene>
+	</body>
+</html>
